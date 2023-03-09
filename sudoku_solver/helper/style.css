@@ -1,0 +1,29 @@
+#padre {
+    width:200px;
+    height: 200px;
+    background-color: blue;
+}
+
+#hijo {
+    width: 175px;
+    height: 175px;
+    background-color: rgb(38, 219, 150);
+}
+
+#hijo2 {
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+}
+
+#hijo3 {
+    width: 125px;
+    height: 125px;
+    background-color: red;
+}
+
+.boton {
+   width: 10px;
+   float: right;
+
+}
