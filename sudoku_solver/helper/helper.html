@@ -1,0 +1,85 @@
+<head>
+<link rel="stylesheet" href="style.css">
+ </head>
+<body>
+ </body>
+
+ 
+<script>
+/*  ======================================================
+ Investigacion sobre como funciona el metodo appendChild para poner contenido dentro de
+ un div en especifico.
+    ======================================================*/
+
+    /* ======================================================
+    creacion manual de divs, en orden de afuera hacia dentro
+    body => padre => hijo => hijo2 => hijo3
+       ======================================================*/
+    let divPadre = document.createElement("div");
+    divPadre.id = ("padre");
+    document.body.append(divPadre);
+
+    let divHijo = document.createElement("div");
+    divHijo.id = ("hijo");
+    divPadre.appendChild(divHijo);
+
+    let divHijo2 = document.createElement("div");
+    divHijo2.id = ("hijo2");
+    divHijo.appendChild(divHijo2);    
+
+    let divHijo3 = document.createElement("div");
+    divHijo3.id = ("hijo3");
+    divHijo2.appendChild(divHijo3);
+
+    /* ======================================================
+    Creacion manual de botones, cada uno asignado a la clase "boton"
+    y appendeado a su respectivo div. 
+       ======================================================*/
+    
+    let btn = document.createElement("button");
+    btn.innerHTML = ("0");
+    btn.className = ("boton");
+    document.body.appendChild(btn);
+
+    let btn1 = document.createElement("button");
+    btn1.innerHTML = ("1");
+    btn1.className = ("boton");
+    divPadre.appendChild(btn1);
+
+    let btn2 = document.createElement("button");
+    btn2.innerHTML = ("2");
+    btn2.className = ("boton");
+    divHijo.appendChild(btn2);
+
+    let btn3 = document.createElement("button");
+    btn3.innerHTML = ("3");
+    btn3.className = ("boton");
+    divHijo2.appendChild(btn3);
+
+    let btn4 = document.createElement("button");
+    btn4.innerHTML = ("4");
+    btn4.className = ("boton");
+    divHijo3.appendChild(btn4);
+
+   /*
+   El objetivo es crear 10 objetos distintos, con ids unicas y poder acceder a su contenido
+   individualmente;
+   */
+
+   class Range {
+      
+   }
+      let i = 0;
+      var array = [];
+      while(i <= 10){
+         var newRange = new Range();
+         newRange.id = i;
+         newRange.content = i * 5;
+         array.push(newRange);
+         i += 1;
+      }
+      console.log(array[3]);
+      let obj = array[3];
+      console.log("La id es: " + obj.id + " El contenido es: " + obj.content );
+      
+    </script>

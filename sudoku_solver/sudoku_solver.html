@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sudoku_Solver</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="sidebar">
+      <div id="container2">
+        <button class="btnNumber" onclick="select(0)"> 0 </button>
+        <button class="btnNumber" onclick="select(1)"> 1 </button>
+        <button class="btnNumber" onclick="select(2)"> 2 </button>
+        <button class="btnNumber" onclick="select(3)"> 3 </button>
+        <button class="btnNumber" onclick="select(4)"> 4 </button>
+        <button class="btnNumber" onclick="select(5)"> 5 </button>
+        <button class="btnNumber" onclick="select(6)"> 6 </button>
+        <button class="btnNumber" onclick="select(7)"> 7 </button>
+        <button class="btnNumber" onclick="select(8)"> 8 </button>
+        <button class="btnNumber" onclick="select(9)"> 9 </button>
+      </div>
+        <div id="container3">
+          <button class="btnMenu" onclick="emptyFinder()">Find emptys</button>
+          <button class="btnMenu" onclick="solve()"> Solve </button>
+          <button class="btnMenu" onclick="autoSolve()">Auto Solve</button>
+    </div>
+  </div>
+	<script src="index.js"></script>
+  </body>
+</html>
