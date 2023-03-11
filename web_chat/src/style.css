@@ -16,7 +16,7 @@ body{
   background-image: radial-gradient(
     #333333 9%,transparent 9%);
   background-position: 0% 0%;
-  background-size: 8vmin 8vmin;
+  background-size: 6vmin 6vmin;
 }
 
 .container{
@@ -60,8 +60,23 @@ body{
   padding-left: 10px;
   padding-right: 10px;
   margin: 5px;
-  border-radius: 50px;
-  height: 50%;
+  border-radius: 40px;
+  height: 40%;
+  width: 5%;
+  border:solid;
+  border-width: 1px;
+  border-color:#1741b3;
+}
+
+#enviar{
+  background-color: #51A461;
+  border-color:#6cb97b;
+}
+
+.boton:hover{
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+  background-color: #1741b3;
 }
 
 #entrada{
@@ -81,6 +96,7 @@ body{
 .bloque-enviado{
   width: 100%;
   min-height: 10%;
+  background-color: chartreuse;
 }
 
 .mensaje-enviado{
