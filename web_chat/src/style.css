@@ -94,9 +94,9 @@ body{
 }
 
 .bloque-enviado{
+  float:right;
   width: 100%;
   min-height: 10%;
-  background-color: chartreuse;
 }
 
 .mensaje-enviado{
