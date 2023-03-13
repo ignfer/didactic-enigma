@@ -20,9 +20,13 @@ function enviar(){
             let recibido_hora = document.createElement("recibido-hora");
             recibido_hora.className = "recibido-hora";
             
-            
-            recibido_hora.innerHTML = "23:52";
-            
+            /* Creacion y obtencion de la fecha para guardarla posteriormente */
+            let fecha = new Date();
+            let hora = fecha.getHours();
+            let minutos = fecha.getMinutes();
+            let tiempo_actual = hora + ":" + minutos;
+
+            recibido_hora.innerHTML = hora + ":" + minutos; //cargo el tiempo actual
             
             chat[0].appendChild(recibido_hora);
             entrada.value = ""; //borro el campo de la entrada
@@ -52,9 +56,13 @@ function recibir(){
             let enviado_hora = document.createElement("enviado-hora");
             enviado_hora.className = "enviado-hora";
             
+            /* Creacion y obtencion de la fecha para guardarla posteriormente */
+            let fecha = new Date();
+            let hora = fecha.getHours();
+            let minutos = fecha.getMinutes();
+            let tiempo_actual = hora + ":" + minutos;
             
-            enviado_hora.innerHTML = "23:52";
-            
+            enviado_hora.innerHTML = hora + ":" + minutos;  //cargo el tiempo actual
             
             chat[0].appendChild(enviado_hora);
             entrada.value = ""; //borro el campo de la entrada
