@@ -147,3 +147,52 @@ body{
   font-size: 20px;
   width: 100%;
 }
+
+.btnconfig{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: solid;
+  border-width: 1px;
+  background-color:#D64550;
+  border-color: #DE6872;
+}
+
+.config{
+ visibility: hidden;
+ position: absolute;
+ display:flex;
+ top: 10px;
+ left: 10px;
+ width: 400px;
+ height: 500px;
+ border-radius: 10px;
+ border: solid;
+ border-width: 1px;
+ background-color: #1F1F1F;
+ border-color: #333333;
+}
+
+#cerrar_configuracion{
+  float: right;
+  width: 30px;
+  height: 30px;
+  border: none;
+  margin: 10px;
+  background-color:#D64550;
+  font-size: 20px;
+  border-radius: 5px;
+  color: white;
+}
+
+#cfg_panel_titulo{
+  width: calc(100% - 40px);
+  font-family: Franklin Gothic Medium;
+  color:#4F6D7A;
+  margin:15px;
+  font-size: 25px;
+  font
+}

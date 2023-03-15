@@ -24,9 +24,13 @@ function enviar(){
             let fecha = new Date();
             let hora = fecha.getHours();
             let minutos = fecha.getMinutes();
-            let tiempo_actual = hora + ":" + minutos;
-
-            recibido_hora.innerHTML = hora + ":" + minutos; //cargo el tiempo actual
+            if (minutos < 10){
+                let tiempo_actual = hora + ":" + "0" + minutos;
+                recibido_hora.innerHTML = tiempo_actual //cargo el tiempo actual
+            }else{
+                let tiempo_actual = hora + ":" + minutos;
+                recibido_hora.innerHTML = tiempo_actual //cargo el tiempo actual
+            }
             
             chat[0].appendChild(recibido_hora);
             entrada.value = ""; //borro el campo de la entrada
@@ -60,11 +64,25 @@ function recibir(){
             let fecha = new Date();
             let hora = fecha.getHours();
             let minutos = fecha.getMinutes();
-            let tiempo_actual = hora + ":" + minutos;
-            
-            enviado_hora.innerHTML = hora + ":" + minutos;  //cargo el tiempo actual
+            if (minutos < 10){
+                let tiempo_actual = hora + ":" + "0" + minutos;
+                enviado_hora.innerHTML = tiempo_actual //cargo el tiempo actual
+            }else{
+                let tiempo_actual = hora + ":" + minutos;
+                enviado_hora.innerHTML = tiempo_actual //cargo el tiempo actual
+            }
             
             chat[0].appendChild(enviado_hora);
             entrada.value = ""; //borro el campo de la entrada
         }
+}
+
+function abrir_configuracion(){
+    let cfg_panel = document.getElementsByClassName("config");
+    cfg_panel[0].style.visibility = 'visible';
+}
+
+function cerrar_configuracion(){
+    let cfg_panel = document.getElementsByClassName("config");    
+    cfg_panel[0].style.visibility = 'hidden';
 }
