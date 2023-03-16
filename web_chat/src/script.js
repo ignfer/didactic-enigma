@@ -1,80 +1,51 @@
 
-function enviar(){
+function nuevo_mensaje(tipo_mensaje){
+
+    /*
+    El parametro 'tipo_mensaje' simplemente nos dice si estamos ante un envio o un mensaje recibido
+    pudiendo asi unificar 2 funciones en 1
+    */
+
     let entrada = document.getElementById("entrada");
         if(entrada.value === ""){ /* en caso de que la entrada sea vacia */
             alert("vacio!")
         }else{ /* si la entrada contenia algun mensaje */
+            let chat = document.getElementsByClassName("chat");    
             let texto = entrada.value; //guardo el texto de la entrada en una variable
-            
-            let bloque_recibido = document.createElement("bloque-recibido"); //creo el div del contenedor del mensaje
-            bloque_recibido.className = "bloque-recibido"; //le asigno su clase
-            let chat = document.getElementsByClassName("chat"); //para achicar codigo
-            
-            let mensaje_recibido = document.createElement("mensaje-recibido"); //creo el div de la burbuja de texto
-            mensaje_recibido.className = "mensaje-recibido"; //le asigno su clase
-            mensaje_recibido.innerHTML = texto; //cargo en la burbuja de texto el mensaje sacado de la entrada
+            let nuevo_bloque = document.createElement("nuevo_bloque"); //creo un bloque generico para almacenar la burbuja
+            let nuevo_mensaje = document.createElement("nuevo_mensaje"); //creo una burbuja de texto generica
+            let nueva_hora = document.createElement("nueva_hora"); // creo una nueva hora de mensaje generica
 
-            bloque_recibido.append(mensaje_recibido); //appendeo el mensaje al bloque contenedor
-            chat[0].appendChild(bloque_recibido); //appendeo el bloque contenedor al chat
+            nuevo_mensaje.innerHTML = texto;
 
-            let recibido_hora = document.createElement("recibido-hora");
-            recibido_hora.className = "recibido-hora";
+            if(tipo_mensaje === "recibir"){
+                nuevo_bloque.className = "bloque-recibido";
+                nuevo_mensaje.className = "mensaje-recibido"
+                nueva_hora.className = "hora-recibido";
+            }else{
+                nuevo_bloque.className = "bloque-enviado";
+                nuevo_mensaje.className = "mensaje-enviado";
+                nueva_hora.className = "hora-enviado";
+            }
             
-            /* Creacion y obtencion de la fecha para guardarla posteriormente */
+            nuevo_bloque.append(nuevo_mensaje);
+            chat[0].appendChild(nuevo_bloque);
+
             let fecha = new Date();
             let hora = fecha.getHours();
             let minutos = fecha.getMinutes();
-            if (minutos < 10){
-                let tiempo_actual = hora + ":" + "0" + minutos;
-                recibido_hora.innerHTML = tiempo_actual //cargo el tiempo actual
+
+            if(minutos < 10){
+                nueva_hora.innerHTML = hora + ":" + "0" + minutos;
             }else{
-                let tiempo_actual = hora + ":" + minutos;
-                recibido_hora.innerHTML = tiempo_actual //cargo el tiempo actual
+                nueva_hora.innerHTML = hora + ":" + minutos;
             }
             
-            chat[0].appendChild(recibido_hora);
-            entrada.value = ""; //borro el campo de la entrada
+            chat[0].appendChild(nueva_hora);
+            entrada.value = "";
+            
         }
     
-}
-
-function recibir(){
-    let entrada = document.getElementById("entrada");
-        if(entrada.value === ""){ /* en caso de que la entrada sea vacia */
-            alert("vacio!")
-            //crear una funcion que haga que el campo de entrada tome un color rojizo y tiemble
-        }else{ /* si la entrada contenia algun mensaje */
-            let texto = entrada.value; //guardo el texto de la entrada en una variable
-            
-            let bloque_enviado = document.createElement("bloque-enviado"); //creo el div del contenedor del mensaje
-            bloque_enviado.className = "bloque-enviado"; //le asigno su clase
-            let chat = document.getElementsByClassName("chat"); //para achicar codigo
-            
-            let mensaje_enviado = document.createElement("mensaje-enviado"); //creo el div de la burbuja de texto
-            mensaje_enviado.className = "mensaje-enviado"; //le asigno su clase
-            mensaje_enviado.innerHTML = texto; //cargo en la burbuja de texto el mensaje sacado de la entrada
-
-            bloque_enviado.append(mensaje_enviado); //appendeo el mensaje al bloque contenedor
-            chat[0].appendChild(bloque_enviado); //appendeo el bloque contenedor al chat
-
-            let enviado_hora = document.createElement("enviado-hora");
-            enviado_hora.className = "enviado-hora";
-            
-            /* Creacion y obtencion de la fecha para guardarla posteriormente */
-            let fecha = new Date();
-            let hora = fecha.getHours();
-            let minutos = fecha.getMinutes();
-            if (minutos < 10){
-                let tiempo_actual = hora + ":" + "0" + minutos;
-                enviado_hora.innerHTML = tiempo_actual //cargo el tiempo actual
-            }else{
-                let tiempo_actual = hora + ":" + minutos;
-                enviado_hora.innerHTML = tiempo_actual //cargo el tiempo actual
-            }
-            
-            chat[0].appendChild(enviado_hora);
-            entrada.value = ""; //borro el campo de la entrada
-        }
 }
 
 function abrir_configuracion(){

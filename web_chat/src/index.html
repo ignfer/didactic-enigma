@@ -5,25 +5,29 @@
     <title> Prueba </title>
     <link rel = "stylesheet" type = "text/css" href = "style.css">
     <script type = "text/javascript" src = "script.js"></script>
+    <link rel = "icon" type = "img/icon" href = "./img/logo.png">
   </head>
 
   <body>
+    <a href = "https://github.com/SinKsa">
+      <img id = logo src = "./img/logo.png" alt = "Ignacio Fernandez developer logo"></img>
+    </a>
+    
     <div class = "wrapper">
-      <div class = "btnconfig" onclick = "abrir_configuracion()"> </div>
-      <div class = "config"> 
-        <div id = "cfg_panel_titulo">Configuracion del chat</div>
-        <button type = "button" id = "cerrar_configuracion" onclick = "cerrar_configuracion()"></button>
-      </div>
       <div class = "container">
-          
+
         <div class = "chat">
           
         </div>
         
         <div class = "input">
-          <div id = "enviar" class = "boton" onclick = "enviar()"></div>
+          <div id = "recibir" class = "boton" onclick = "nuevo_mensaje('recibir')">
+            <img src = "./img/send.png" alt = "Recibir mensaje" width="80%"></img>
+          </div>
           <input type = text id="entrada"> </input>
-          <div id = "recibir" class = "boton" onclick = "recibir()"></div>
+          <div id = "enviar" class = "boton" onclick = "nuevo_mensaje('enviar')">
+            <img src = "./img/send.png" alt = "Enviar mensaje" width="80%"></img>
+          </div>
         </div>
 
       </div>
